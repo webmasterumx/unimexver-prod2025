@@ -1,0 +1,1570 @@
+@media (min-width: 200px) and (max-width: 400px) {
+
+    #text_ventajasPosDistancia {
+        height: 350px;
+        overflow-y: scroll;
+    }
+
+    .itemImgCarrucelVentajasDis {
+        height: 20rem !important;
+    }
+
+    #contenedorTexto {
+        padding: 10%;
+        font-size: 120%;
+    }
+
+    #formularioContactanos,
+    #formularioServicioAlumnos,
+    #formularioContrataAlumnos,
+    #formularioTrabajaUnimex,
+    #formularioQuejasYSugerencias {
+        width: 100% !important;
+    }
+
+    #seccionFormContactanosForm,
+    #seccionServiciosAlumnos,
+    #seccionContrataAlumnos,
+    #seccionTrabajaUnimex,
+    #seccionQuejasySugerencias {
+        width: 100% !important;
+    }
+
+    #temario_especialidad>.slick-list,
+    #temario_maestria>.slick-list {
+        height: 22rem !important;
+    }
+
+    .cardBodyPosgradosMet {
+        height: 20rem !important;
+    }
+
+    .cardTemarioPosDistancia {
+        height: 20rem !important;
+    }
+
+    #listCarreras>.slick-list {
+        height: 28rem !important;
+    }
+
+    #listCarreras,
+    .itemsCarrucelCarreras {
+        height: 450px !important;
+    }
+
+    #requesitos_licenciatura {
+        height: 750px !important;
+    }
+
+
+    #temario_distancia {
+        height: 450px !important;
+    }
+
+    .cardTemarioLicdistant,
+    .cardBodyTemarioLicdistant {
+        min-height: 410px !important;
+        max-height: 410px !important;
+    }
+
+    #cardTemarioLicenciatura,
+    #cardTemarioBodyLicenciatura {
+        min-height: 360px;
+        max-height: 360px;
+    }
+
+    #tituloVentajasLicDistancia {
+        font-size: 1.438rem !important;
+    }
+
+    #text_ventajas {
+        height: 350px;
+        overflow-y: scroll;
+    }
+
+    /*
+        ==========> PAGINA INICIAL <============
+
+
+        Estilos de banner inicial
+    */
+    #bannerInicial {
+        height: 10rem;
+    }
+
+    #carrucelCalBeca,
+    #carrucelCalBeca>.slick-list {
+        height: 11rem;
+    }
+
+    /*
+        Estilos de flechas para carrucel de carreras en pagina de incio
+    */
+    .slick-prev {
+        left: 6%;
+        top: 50%;
+    }
+
+    .slick-next {
+        right: 2%;
+        top: 50%;
+    }
+
+    /*
+        Estilos del contenedor de cada item del carrucel inicial
+    */
+    .itemBannerInit {
+        height: 15rem;
+    }
+
+    /*
+        ================> MODAL INICIAL <================
+
+        Estilos del modal inicial que redirige a calculadora de becas
+    */
+    #closeModalCalculadora {
+        position: relative;
+        top: 12%;
+        left: 49%;
+    }
+
+    /*
+
+        ================> PAGINA ACERCA DE <=================
+
+        Estilos de la portada de esta pagina
+    */
+    #historia {
+        height: 38vh;
+    }
+
+    /*
+
+        Estilos de las etiquetas de la portada
+
+        -> normal 
+        -> mensaje del rector
+
+    */
+    .etiqueta-titulo-acercade {
+        top: 38%;
+        width: 50%;
+        font-size: 32px;
+    }
+
+    .etiqueta-titulo-acercade-mensaje {
+        top: 34%;
+        font-size: 30px;
+        width: 96%;
+    }
+
+    /*
+        Estilos para imagenes de acerca de  <servicios>
+    */
+    .fondoServiciosSm {
+        display: block;
+        height: 200px;
+    }
+
+    /*
+
+        ================> Paginas de oferta academica <===================
+
+    */
+    #portada {
+        height: 30vh;
+    }
+
+    #contraportada {
+        height: 16rem;
+    }
+
+    .etiqueta-titulo {
+        font-size: 16px !important;
+        text-align: center;
+    }
+
+    /*
+
+        ========================> Estilos para oferta licenciatura Sua <========================
+
+    */
+
+    #carrucelVentajas>.slick-list {
+        height: 20rem;
+    }
+
+    #campo_laboral {
+        height: 10rem;
+    }
+
+
+    #requisitosSUA {
+        height: 54rem;
+    }
+
+    /*
+
+        =====================> Estilos en la Pagina de Plantel <============================
+
+    */
+    #plantel {
+        height: 30vh;
+    }
+
+    /*
+        Estilos de la tarjeta descriptiva que aparece en el mapa de los planteles
+    */
+    .card-ld {
+        display: none;
+    }
+
+    /*
+        Estilos de las flechas del carrucel de imagenes de cada plantel
+    */
+    .slick-prev-plantel {
+        left: 7%;
+    }
+
+    .slick-next-plantel {
+        right: 4%;
+    }
+
+    /*
+        Estilos para los inputs de catcha de los formularios de contacto
+    */
+    #number3,
+    #number4,
+    #number1,
+    #number2,
+    #number5,
+    #number6,
+    #number7,
+    #number8 {
+        width: 100%;
+    }
+
+
+    .slick-prev-calculadora {
+        top: 29%;
+        left: 16%;
+        font-size: 38px;
+    }
+
+    .slick-next-calculadora {
+        top: 30%;
+        right: 4%;
+        font-size: 38px;
+    }
+
+    #temario>.slick-list {
+        height: 26rem !important;
+    }
+
+    #campo_laboral>.slick-list {
+        height: 16rem;
+    }
+
+    #requisitos {
+        height: 48rem !important;
+    }
+
+    #requisitos>.slick-list {
+        height: 48rem !important;
+    }
+
+    #requesito2>.slick-list>.slick-active {
+        height: 47rem;
+    }
+
+
+    .cardBodyPosgrado {
+        height: 40rem !important;
+    }
+
+}
+
+/*
+    Pendientes --------- =P
+*/
+@media (min-width: 400px) and (max-width: 500.98px) {
+
+    #text_ventajasPosDistancia {
+        height: 350px;
+        overflow-y: scroll;
+    }
+
+    #contenedorTexto {
+        padding: 10%;
+        font-size: 120%;
+    }
+
+    .cardBodyPosgradosMet {
+        height: 20rem !important;
+    }
+
+    #formularioContactanos,
+    #formularioServicioAlumnos,
+    #formularioContrataAlumnos,
+    #formularioTrabajaUnimex,
+    #formularioQuejasYSugerencias {
+        width: 100% !important;
+    }
+
+    #seccionFormContactanosForm,
+    #seccionServiciosAlumnos,
+    #seccionContrataAlumnos,
+    #seccionTrabajaUnimex,
+    #seccionQuejasySugerencias {
+        width: 100% !important;
+    }
+
+    #temario_especialidad>.slick-list,
+    #temario_maestria>.slick-list {
+        height: 20rem !important;
+    }
+
+    .cardTemarioPosDistancia {
+        height: 16rem !important;
+    }
+
+    #listCarreras>.slick-list {
+        height: 25rem !important;
+    }
+
+    .itemsCarrucelCarreras {
+        height: 450px !important;
+    }
+
+    #requesitos_licenciatura {
+        height: 680px !important;
+    }
+
+
+    #temario_distancia {
+        height: 450px !important;
+    }
+
+    .cardTemarioLicdistant,
+    .cardBodyTemarioLicdistant {
+        min-height: 410px !important;
+        max-height: 410px !important;
+    }
+
+
+    #cardTemarioLicenciatura,
+    #cardTemarioBodyLicenciatura {
+        min-height: 360px;
+        max-height: 360px;
+    }
+
+    #text_ventajas {
+        height: 350px;
+        overflow-y: scroll;
+    }
+
+    /*
+        ==========> PAGINA INICIAL <============
+
+
+        Estilos de banner inicial
+    */
+    #bannerInicial {
+        height: 12rem;
+    }
+
+    #carrucelCalBeca,
+    #carrucelCalBeca>.slick-list {
+        height: 13.5rem;
+    }
+
+    /*
+        Estilos de flechas para carrucel de carreras en pagina de incio
+    */
+    .slick-prev {
+        top: 50%;
+        left: 4%;
+    }
+
+    .slick-next {
+        top: 50%;
+        right: 2%;
+    }
+
+
+    .slick-prev-calculadora {
+        top: 40%;
+        left: 9%;
+    }
+
+    .slick-next-calculadora {
+        top: 44%;
+        right: 8%;
+    }
+
+    /*
+        Estilos del contenedor de cada item del carrucel inicial
+    */
+    .itemBannerInit {
+        height: 15rem;
+    }
+
+    /*
+        ================> MODAL INICIAL <================
+
+        Estilos del modal inicial que redirige a calculadora de becas
+    */
+    #closeModalCalculadora {
+        position: relative;
+        top: 13%;
+        left: 46%;
+    }
+
+    /*
+
+        ================> PAGINA ACERCA DE <=================
+
+        Estilos de la portada de esta pagina
+    */
+    #historia {
+        height: 28vh;
+    }
+
+    /*
+
+        Estilos de las etiquetas de la portada
+
+        -> normal 
+        -> mensaje del rector
+
+    */
+    .etiqueta-titulo-acercade {
+        top: 38%;
+        width: 50%;
+        font-size: 32px;
+    }
+
+    .etiqueta-titulo-acercade-mensaje {
+        top: 38%;
+        font-size: 32px;
+        width: 92%;
+    }
+
+    /*
+        Estilos para imagenes de acerca de  <servicios>
+    */
+    .fondoServiciosSm {
+        display: block;
+        height: 200px;
+    }
+
+    /*
+        ================> Paginas de oferta academica <===================
+
+    */
+    #portada {
+        height: 30vh;
+    }
+
+    #contraportada {
+        height: 24rem;
+    }
+
+    .etiqueta-titulo {
+        font-size: 16px !important;
+        text-align: center;
+    }
+
+    /*
+
+        ========================> Estilos para oferta licenciatura Sua <========================
+
+    */
+
+    #carrucelVentajas>.slick-list {
+        height: 21rem;
+    }
+
+    .itemImgCarrucelVentajasDis {
+        height: 21rem !important;
+    }
+
+    #campo_laboral {
+        height: 10rem;
+    }
+
+    #requisitosSUA {
+        height: 46rem;
+    }
+
+    /*
+
+        =====================> Estilos en la Pagina de Plantel <============================
+
+    */
+    #plantel {
+        height: 30vh;
+    }
+
+    /*
+        Estilos de la tarjeta descriptiva que aparece en el mapa de los planteles
+    */
+    .card-ld {
+        display: none;
+    }
+
+    /*
+        Estilos de las flechas del carrucel de imagenes de cada plantel
+    */
+    .slick-prev-plantel {
+        left: 7%;
+    }
+
+    .slick-next-plantel {
+        right: 4%;
+    }
+
+    /*
+        Estilos para los inputs de catcha de los formularios de contacto
+    */
+    #number3,
+    #number4,
+    #number1,
+    #number2,
+    #number5,
+    #number6,
+    #number7,
+    #number8 {
+        width: 100%;
+    }
+
+
+    #temario>.slick-list {
+        height: 25rem !important;
+    }
+
+    #campo_laboral>.slick-list {
+        height: 16rem !important;
+    }
+
+    #requesito2>.slick-list>.slick-active {
+        height: 40rem;
+    }
+
+    #requisitos {
+        height: 39rem !important;
+    }
+
+    #requisitos>.slick-list {
+        height: 39rem !important;
+    }
+
+}
+
+@media (min-width: 500px) and (max-width: 600.98px) {
+
+    #text_ventajasPosDistancia {
+        height: 450px;
+        overflow-y: scroll;
+    }
+
+    #carrucelVentajas>.slick-list {
+        height: 25rem;
+    }
+
+    .itemImgCarrucelVentajasDis {
+        height: 25rem !important;
+    }
+
+    #contenedorTexto {
+        padding: 10%;
+        font-size: 120%;
+    }
+
+    #temario>.slick-list {
+        height: 25rem !important;
+    }
+
+    .cardBodyPosgradosMet {
+        height: 20rem !important;
+    }
+
+    #carrucelCalBeca,
+    #carrucelCalBeca>.slick-list {
+        height: 17.5rem;
+    }
+
+    #temario_especialidad>.slick-list,
+    #temario_maestria>.slick-list {
+        height: 17rem !important;
+    }
+
+    .cardTemarioPosDistancia {
+        height: 16rem !important;
+    }
+
+    #listCarreras>.slick-list {
+        height: 25rem !important;
+    }
+
+    #listCarreras,
+    .itemsCarrucelCarreras {
+        height: 400px !important;
+    }
+
+    .itemsCarrucelCarreras {
+        height: 450px !important;
+    }
+
+    #requesitos_licenciatura {
+        height: 600px !important;
+    }
+
+    #requisitos>.slick-list {
+        height: 450px !important;
+    }
+
+    #temario_distancia {
+        height: 310px !important;
+    }
+
+    .cardTemarioLicdistant,
+    .cardBodyTemarioLicdistant {
+        min-height: 410px !important;
+        max-height: 410px !important;
+    }
+
+
+    #cardTemarioLicenciatura,
+    #cardTemarioBodyLicenciatura {
+        min-height: 390px;
+        max-height: 390px;
+    }
+
+    #text_ventajas {
+        height: 450px;
+        overflow-y: scroll;
+    }
+
+    #bannerInicial {
+        height: 14rem;
+    }
+
+    .slick-prev {
+        top: 50%;
+        left: 4%;
+    }
+
+    .slick-next {
+        top: 50%;
+        right: 2%;
+    }
+
+    #closeModalCalculadora {
+        position: relative;
+        top: 13%;
+        left: 46%;
+    }
+
+    .etiqueta-titulo-acercade {
+        top: 38%;
+        font-size: 32px;
+    }
+
+    #historia {
+        height: 38vh;
+    }
+
+    .itemBannerInit {
+        height: 15rem;
+    }
+
+
+    .slick-prev-calculadora {
+        top: 33%;
+        left: 10%;
+        font-size: 50px;
+    }
+
+    .slick-next-calculadora {
+        top: 33%;
+        right: 5%;
+        font-size: 50px;
+    }
+
+    /*
+
+        ================> PAGINA ACERCA DE <=================
+
+        Estilos de la portada de esta pagina
+    */
+    #historia {
+        height: 38vh;
+    }
+
+    /*
+
+        ================> PAGINA ACERCA DE <=================
+
+        Estilos de la portada de esta pagina
+    */
+    #historia {
+        height: 70vh;
+    }
+
+    .etiqueta-titulo-acercade-mensaje {
+        top: 38%;
+        font-size: 32px;
+        width: 58%;
+    }
+
+    /*
+
+        =====================> Estilos en la Pagina de Plantel <============================
+
+    */
+    #plantel {
+        height: 68vh;
+    }
+
+    /*
+        ================> Paginas de oferta academica <===================
+
+    */
+    #portada {
+        height: 78vh;
+    }
+
+    .navigation {
+        padding: 1px 0 !important;
+    }
+
+    #requisitos {
+        height: 29rem !important;
+    }
+
+    #requisitos>.slick-list {
+        height: 29rem !important;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 800.98px) {
+    #contenedorTexto {
+        padding: 10%;
+        font-size: 120%;
+    }
+
+    .cardBodyPosgradosMet {
+        height: 20rem !important;
+    }
+
+    #carrucelCalBeca,
+    #carrucelCalBeca>.slick-list {
+        height: 20rem;
+    }
+
+    .cardTemarioPosDistancia {
+        height: 24rem !important;
+    }
+
+    #temario_especialidad>.slick-list,
+    #temario_maestria>.slick-list {
+        height: 22rem !important;
+    }
+
+    .itemsCarrucelCarreras {
+        height: 450px !important;
+    }
+
+    #requesitos_licenciatura {
+        height: 600px !important;
+    }
+
+    #requisitos>.slick-list {
+        height: 420px !important;
+    }
+
+
+    #temario_distancia {
+        height: 330px !important;
+    }
+
+    .cardTemarioLicdistant,
+    .cardBodyTemarioLicdistant {
+        min-height: 410px !important;
+        max-height: 410px !important;
+    }
+
+
+    #cardTemarioLicenciatura,
+    #cardTemarioBodyLicenciatura {
+        min-height: 390px;
+        max-height: 390px;
+    }
+
+    #bannerInicial {
+        height: 17rem;
+    }
+
+    #closeModalCalculadora {
+        position: relative;
+        top: 9%;
+        left: 49%;
+    }
+
+    .slick-prev {
+        top: 50%;
+        left: 1%;
+    }
+
+    .slick-next {
+        top: 50%;
+        right: 0%;
+    }
+
+    .itemBannerInit {
+        height: 20rem;
+    }
+
+
+    .slick-prev-calculadora {
+        top: 40%;
+        left: 7%;
+        font-size: 60px;
+    }
+
+    .slick-next-calculadora {
+        top: 40%;
+        right: 5%;
+        font-size: 60px;
+    }
+
+    /*
+
+        ================> PAGINA ACERCA DE <=================
+
+        Estilos de la portada de esta pagina
+    */
+    #historia {
+        height: 40vh;
+    }
+
+    .etiqueta-titulo-acercade-mensaje {
+        top: 38%;
+        font-size: 32px;
+        width: 70%;
+    }
+
+    .etiqueta-titulo-acercade {
+        top: 38%;
+        font-size: 36px;
+        width: 36%;
+    }
+
+
+    /*
+
+        =====================> Estilos en la Pagina de Plantel <============================
+
+    */
+    #plantel {
+        height: 68vh;
+    }
+
+    /*
+        ================> Paginas de oferta academica <===================
+
+    */
+    #portada {
+        height: 35vh;
+    }
+
+    .navigation {
+        padding: 1px 0 !important;
+    }
+
+    #contraportada {
+        height: 30rem;
+    }
+
+    #requisitos {
+        height: 30rem;
+    }
+
+    #carrucelVentajas>.slick-list {
+        height: 27rem;
+    }
+
+    .itemImgCarrucelVentajasDis {
+        height: 27rem !important;
+    }
+
+    #campo_laboral {
+        height: 10rem;
+    }
+
+    #requisitosSUA {
+        height: 28rem;
+    }
+
+    #fondoServiciosSm {
+        display: block;
+        height: 200px;
+    }
+
+    #temario>.slick-list {
+        height: 29rem !important;
+    }
+
+    #requisitos {
+        height: 23rem !important;
+    }
+
+    #requisitos>.slick-list {
+        height: 23rem !important;
+    }
+
+}
+
+@media (min-width: 800.98px) and (max-width: 900.98px) {
+
+    #text_ventajasPosDistancia {
+        height: 25rem !important;
+        overflow-y: scroll;
+    }
+
+    #contenedorTexto {
+        padding: 10%;
+        font-size: 120%;
+    }
+
+    .cardBodyPosgradosMet {
+        height: 20rem !important;
+    }
+
+    .cardTemarioPosDistancia {
+        height: 300px !important;
+    }
+
+
+    .itemsCarrucelCarreras {
+        height: 420px !important;
+    }
+
+    #requesitos_licenciatura {
+        height: 600px !important;
+    }
+
+    #requisitos>.slick-list {
+        height: 420px !important;
+    }
+
+    #temario_distancia {
+        height: 450px !important;
+    }
+
+    .cardTemarioLicdistant,
+    .cardBodyTemarioLicdistant {
+        min-height: 410px !important;
+        max-height: 410px !important;
+    }
+
+
+    #cardTemarioLicenciatura,
+    #cardTemarioBodyLicenciatura {
+        min-height: 390px;
+        max-height: 390px;
+    }
+
+    #temario_especialidad>.slick-list,
+    #temario_maestria>.slick-list {
+        height: 16rem !important;
+    }
+
+
+    #bannerInicial {
+        height: 22rem;
+    }
+
+    #closeModalCalculadora {
+        position: relative;
+        top: 14%;
+        left: 46%;
+    }
+
+    #historia {
+        height: 40vh;
+    }
+
+    .etiqueta-titulo-acercade {
+        top: 40%;
+        font-size: 42px;
+        width: 34%;
+    }
+
+    .slick-prev {
+        top: 50%;
+        left: 1%;
+    }
+
+    .slick-next {
+        top: 50%;
+        right: -1%;
+    }
+
+    .itemBannerInit {
+        height: 24rem;
+    }
+
+    .slick-prev-calculadora {
+        top: 45%;
+        left: 6%;
+        font-size: 60px;
+    }
+
+    .slick-next-calculadora {
+        top: 45%;
+        right: 5%;
+        font-size: 60px;
+    }
+
+    /*
+
+        ================> PAGINA ACERCA DE <=================
+
+        Estilos de la portada de esta pagina
+    */
+
+    .etiqueta-titulo-acercade-mensaje {
+        top: 38%;
+        font-size: 32px;
+        width: 58%;
+    }
+
+    /*
+
+        =====================> Estilos en la Pagina de Plantel <============================
+
+    */
+    #plantel {
+        height: 68vh;
+    }
+
+    /*
+        ================> Paginas de oferta academica <===================
+
+    */
+    #portada {
+        height: 78vh;
+    }
+
+    #contraportada {
+        height: 28rem;
+    }
+
+    #requisitos {
+        height: 29rem !important;
+    }
+
+    #requisitos>.slick-list {
+        height: 29rem !important;
+    }
+
+    #carrucelVentajas>.slick-list {
+        height: 25rem;
+    }
+
+    .itemImgCarrucelVentajasDis {
+        height: 25rem !important;
+    }
+
+    #text_ventajas {
+        height: 25rem !important;
+        overflow-y: scroll;
+    }
+
+}
+
+@media (min-width: 900.98px) and (max-width: 1199.98px) {
+
+    #text_ventajasPosDistancia {
+        height: 30rem !important;
+        overflow-y: scroll;
+    }
+
+    #contenedorTexto {
+        padding: 10%;
+        font-size: 120%;
+    }
+
+    .itemsCarrucelCarreras {
+        height: 430px !important;
+    }
+
+    #requesitos_licenciatura {
+        height: 590px !important;
+    }
+
+    #requisitos>.slick-list {
+        height: 420px !important;
+    }
+
+    #temario_distancia {
+        height: 330px !important;
+    }
+
+    .cardTemarioLicdistant,
+    .cardBodyTemarioLicdistant {
+        min-height: 260px !important;
+        max-height: 260px !important;
+    }
+
+
+    #temario_especialidad>.slick-list,
+    #temario_maestria>.slick-list {
+        height: 300px !important;
+    }
+
+
+    .cardBodyPosgradosMet {
+        height: 14rem !important;
+    }
+
+    .cardTemarioPosDistancia {
+        height: 300px !important;
+    }
+
+
+    #text_ventajas {
+        height: 550px;
+        overflow-y: scroll;
+    }
+
+    #cardTemarioLicenciatura,
+    #cardTemarioBodyLicenciatura {
+        min-height: 400px;
+        max-height: 400px;
+    }
+
+    #contraportada {
+        height: 30rem;
+    }
+
+    #closeModalCalculadora {
+        position: relative;
+        top: 12%;
+        left: 46%;
+    }
+
+    .slick-prev {
+        top: 50%;
+        left: 3%;
+    }
+
+    .slick-next {
+        top: 50%;
+        right: 4%;
+    }
+
+    .itemBannerInit {
+        height: 26rem;
+    }
+
+    #historia {
+        height: 80vh;
+    }
+
+    .etiqueta-titulo-acercade {
+        top: 38%;
+        font-size: 44px;
+        width: 34%;
+    }
+
+    /*
+        ================> Paginas de oferta academica <===================
+
+    */
+    #portada {
+        height: 50vh;
+    }
+
+    #text_ventajas {
+        height: 23.3rem !important;
+    }
+
+    #carrucelVentajas>.slick-list {
+        height: 25rem;
+    }
+
+    .itemImgCarrucelVentajasDis {
+        height: 25rem !important;
+    }
+
+    #text_ventajas {
+        height: 25rem !important;
+        overflow-y: scroll;
+    }
+
+
+    #campo_laboral {
+        height: 5rem !important;
+    }
+
+    .slick-prev-campo {
+        left: -20px !important;
+    }
+
+    .slick-next-campo {
+        right: -28px !important;
+    }
+
+    #requisitos {
+        height: 30rem !important;
+    }
+
+    .etiqueta-titulo-acercade-mensaje {
+        top: 30%;
+        font-size: 32px;
+        width: 60%;
+    }
+
+    .fondoServiciosSm {
+        display: none;
+    }
+
+    #requisitos {
+        height: 30rem !important;
+    }
+
+    #requisitos>.slick-list {
+        height: 30rem !important;
+    }
+}
+
+@media (min-width: 1199.98px) and (max-width: 1399.98px) {
+
+    #text_ventajasPosDistancia {
+        height: 32rem !important;
+        overflow-y: scroll;
+    }
+
+    #contenedorTexto {
+        padding: 10% !important;
+        font-size: 120% !important;
+    }
+
+    .cardTemarioPosDistancia {
+        height: 300px !important;
+    }
+
+
+    .itemsCarrucelCarreras {
+        height: 400px !important;
+    }
+
+    #temario_distancia {
+        height: 300px !important;
+    }
+
+    .cardTemarioLicdistant,
+    .cardBodyTemarioLicdistant {
+        min-height: 250px !important;
+        max-height: 250px !important;
+    }
+
+
+    #temario_especialidad>.slick-list,
+    #temario_maestria>.slick-list {
+        height: 16rem !important;
+    }
+
+    #requisitos,
+    #requisitos>.slick-list {
+        height: 325px !important;
+        max-height: 325px !important;
+    }
+
+    #text_ventajas {
+        height: 32rem !important;
+        padding: 2rem !important;
+    }
+
+    #cardTemarioLicenciatura,
+    #cardTemarioBodyLicenciatura {
+        min-height: 320px;
+        max-height: 320px;
+    }
+
+    #carrucelVentajas {
+        height: 32rem;
+    }
+
+    .itemImgCarrucelVentajasDis {
+        height: 32rem !important;
+    }
+
+    #contraportada {
+        height: 89vh !important;
+    }
+
+    #closeModalCalculadora {
+        position: relative;
+        top: -46%;
+        left: 71%;
+    }
+
+    .slick-prev {
+        top: 50%;
+        left: 0;
+    }
+
+    .slick-next {
+        top: 50%;
+        right: 0;
+    }
+
+    .itemBannerInit {
+        height: 34rem;
+    }
+
+    #historia {
+        height: 70vh;
+    }
+
+    .etiqueta-titulo-acercade {
+        top: 38%;
+        font-size: 50px;
+        width: 34%;
+    }
+
+
+    .fondoServiciosSm {
+        display: none;
+    }
+
+    .etiqueta-titulo-acercade-mensaje {
+        top: 32%;
+        font-size: 50px;
+        width: 52%;
+    }
+
+    #plantel {
+        height: 75vh;
+    }
+
+    .card-ld {
+        display: block;
+    }
+
+    /*
+
+        ================> Paginas de oferta academica <===================
+
+    */
+    #portada {
+        height: 90vh;
+    }
+
+    .etiqueta-titulo {
+        font-size: 35px !important;
+        text-align: center;
+    }
+
+    #campo_laboral {
+        height: 15rem;
+    }
+
+    /*
+        Estilos para los inputs de catcha de los formularios de contacto
+    */
+    #number3,
+    #number4,
+    #number1,
+    #number2,
+    #number5,
+    #number6,
+    #number7,
+    #number8 {
+        width: 40%;
+    }
+
+    #carrucelInit,
+    .contenedorBannerCal {
+        height: auto !important;
+    }
+
+    .cardBodyPosgradosMet {
+        height: 14rem !important;
+    }
+
+    #requisitos {
+        height: 30rem !important;
+    }
+
+    #requisitos>.slick-list {
+        height: 30rem !important;
+    }
+}
+
+@media (min-width: 1399.98px) {
+
+    #subportadaPosDis {
+        height: 43rem !important;
+    }
+
+    #text_ventajasPosDistancia {
+        height: 43rem;
+        overflow-y: scroll;
+    }
+
+    #contenedorTexto {
+        padding: 10%;
+    }
+
+    .cardTemarioPosDistancia {
+        height: 300px !important;
+    }
+
+
+    .itemsCarrucelCarreras {
+        height: 512px !important;
+    }
+
+    #temario_distancia {
+        height: 450px !important;
+    }
+
+    .cardTemarioLicdistant,
+    .cardBodyTemarioLicdistant {
+        min-height: 410px !important;
+        max-height: 410px !important;
+    }
+
+
+    #temario_especialidad>.slick-list,
+    #temario_maestria>.slick-list {
+        height: 20rem !important;
+    }
+
+    .cardBodyPosgradosMet {
+        height: 18rem !important;
+    }
+
+    #requisitos,
+    #requisitos>.slick-list {
+        height: 480px !important;
+        max-height: 480px !important;
+    }
+
+    #text_ventajas {
+        height: 41rem;
+        padding: 3rem !important;
+    }
+
+    #cardTemarioLicenciatura,
+    #cardTemarioBodyLicenciatura {
+        min-height: 420px;
+        max-height: 420px;
+    }
+
+    #carrucelVentajas>.slick-list {
+        height: 41rem !;
+    }
+
+    .itemImgCarrucelVentajasDis {
+        height: 41rem !important;
+    }
+
+
+    body {
+        font-size: 140% !important;
+    }
+
+    #closeModalCalculadora {
+        position: relative;
+        top: -42%;
+        left: 73%;
+    }
+
+    .slick-prev {
+        top: 50%;
+        left: 0;
+    }
+
+    .slick-next {
+        top: 50%;
+        right: 0;
+    }
+
+    .itemBannerInit {
+        /* height: 36rem !important; */
+        height: auto;
+    }
+
+    #historia {
+        height: 70vh;
+    }
+
+    .fondoServiciosSm {
+        display: none;
+    }
+
+    .etiqueta-titulo-acercade-mensaje {
+        top: 34%;
+        font-size: 30px;
+        width: 96%;
+    }
+
+    #plantel {
+        height: 75vh;
+    }
+
+    .card-ld {
+        display: block;
+    }
+
+    #portada {
+        height: 90vh;
+    }
+
+    .etiqueta-titulo {
+        font-size: 35px !important;
+        text-align: center;
+    }
+
+    #campo_laboral {
+        height: 15rem;
+    }
+
+    /*
+        Estilos para los inputs de catcha de los formularios de contacto
+    */
+    #number3,
+    #number4,
+    #number1,
+    #number2,
+    #number5,
+    #number6,
+    #number7,
+    #number8 {
+        width: 40%;
+    }
+
+    #carrucelInit,
+    .contenedorBannerCal {
+        height: auto !important;
+    }
+
+    #contraportada {
+        height: 89vh !important;
+    }
+
+    #requisitos {
+        height: 30rem !important;
+    }
+
+    #requisitos>.slick-list {
+        height: 30rem !important;
+    }
+
+}
