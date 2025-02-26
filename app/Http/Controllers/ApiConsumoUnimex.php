@@ -10,7 +10,7 @@ class ApiConsumoUnimex extends Controller
     public function getRvoes()
     {
 
-        $ruta = "https://comunimex.lat/TestingUnimexApi/api/PaginaWebUMX/CatRvoe";
+        $ruta = "https://soyunimex.edu.mx/TestingUnimexApi/api/PaginaWebUMX/CatRvoe";
 
         $response = Http::get($ruta);
 
