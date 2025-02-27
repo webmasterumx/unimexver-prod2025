@@ -8,8 +8,8 @@ use Illuminate\Support\Facades\Http;
 class ApiConsumoController extends Controller
 {
 
-    //public $base_url = 'https://api-testing.unimexver.edu.mx/api/';
-    public $base_url = "https://api.unimexver.edu.mx/api/";
+    public $base_url = 'https://api-testing.unimexver.edu.mx/api/';
+    //public $base_url = "https://api.unimexver.edu.mx/api/";
 
     /**
      * Metodo ocupado en:

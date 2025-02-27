@@ -28,11 +28,11 @@ function envioFormulario(form) {
         processData: false,
     }).done(function (data) {
         let respuesta = JSON.parse(data);
-        console.log(respuesta);
+        //console.log(respuesta);
 
         let estatusCorreo = respuesta.estadoCorreo;
         if (estatusCorreo == true) {
-            console.log("correo enviado correctamente");
+            //console.log("correo enviado correctamente");
             $('#mensajeCorrreo').html(`
                     <div id="alertSuccess" class="alert alert-success alert-dismissible fade show" role="alert">
                         ¡Correo enviado correctamente!
@@ -40,7 +40,7 @@ function envioFormulario(form) {
                     </div>
                 `);
         } else {
-            console.log("error en el envio del correo ");
+            //console.log("error en el envio del correo ");
             $('#mensajeCorrreo').html(`
                     <div id="alertError" class="alert alert-danger alert-dismissible fade show" role="alert">
                         ¡Error al enviar correo!
@@ -92,7 +92,7 @@ function envioFormulario(form) {
 
 
     }).fail(function () {
-        console.log("Algo salió mal");
+        //console.log("Algo salió mal");
     });
 }
 
@@ -124,7 +124,7 @@ function selectHorario(turno, beca, element) {
         "egresado": egresado,
     };
 
-    console.log(data);
+    //console.log(data);
 
     actualizarProspectoCalculadora(turno);
 
@@ -138,7 +138,7 @@ function selectHorario(turno, beca, element) {
         url: ruta,
         data: data
     }).done(function (data) {
-        console.log(data);
+        //console.log(data);
 
         if (data.Beca != undefined) {
             establecerValoresCosto(data);
@@ -159,7 +159,7 @@ function selectHorario(turno, beca, element) {
         }
 
     }).fail(function () {
-        console.log("Algo salió mal");
+        //console.log("Algo salió mal");
     });
 }
 
@@ -202,7 +202,7 @@ function getCarreras() {
         "nivel": claveNivel,
         "periodo": clavePeriodo
     }
-    console.log(data);
+    //console.log(data);
 
     let ruta = setUrlBase() + "getCarreras";
 
@@ -215,7 +215,7 @@ function getCarreras() {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
     }).done(function (data) {
-        console.log(data);
+        //console.log(data);
         $("#selectCarrera").empty();
         $("#selectCarrera").append(`<option class="text-center" value=""> - Selecciona una Carrera - </option>`);
         for (let index = 0; index < data.length; index++) { //recorrer el array de carreras
@@ -225,7 +225,7 @@ function getCarreras() {
         }
 
     }).fail(function () {
-        console.log("Algo salió mal");
+        //console.log("Algo salió mal");
     });
 }
 
@@ -245,14 +245,14 @@ function getNiveles() {
             plantel: plantel
         }
     }).done(function (data) {
-        console.log(data);
+        //console.log(data);
         $.each(data, function (index, value) {
             $('#selectNivel').append("<option value='" + value.clave + "'>" + value
                 .descrip + "</option>");
         });
 
     }).fail(function () {
-        console.log("Algo salió mal");
+        //console.log("Algo salió mal");
     });
 }
 
@@ -273,8 +273,8 @@ function setNombreCarrreraSaleccionada() {
  */
 function setVariablesCombosReguardadas(carrera, nombre) {
 
-    console.log(carrera);
-    console.log(nombre);
+    //console.log(carrera);
+    //console.log(nombre);
 
     sessionStorage.setItem("nombreCarrera", nombre);
 
@@ -286,10 +286,10 @@ function setVariablesCombosReguardadas(carrera, nombre) {
         dataType: "html",
     }).done(function (data) {
 
-        console.log(data);
+        //console.log(data);
 
     }).fail(function () {
-        console.log("Algo salió mal");
+        //console.log("Algo salió mal");
     });
 }
 
@@ -299,7 +299,7 @@ function getVariablesCombosResguardadas() {
     //let nombreCarreraRes = data.nombre;
 
     let nombreCarreraRes = sessionStorage.getItem("nombreCarrera");
-    console.log(nombreCarreraRes);
+    //console.log(nombreCarreraRes);
 
     recalculoDeCombos(carreraResguardo, nombreCarreraRes);
 
@@ -309,8 +309,8 @@ function recalculoDeCombos(carreraResguardo, nombreCarreraRes) {
     // se resguarda la carrera previamente seleccinada
 
 
-    console.log(carreraResguardo);
-    console.log(nombreCarreraRes);
+    //console.log(carreraResguardo);
+    //console.log(nombreCarreraRes);
 
     let cont;
     let clavePlantel = $('select[name=selectPlantel]').val();
@@ -322,7 +322,7 @@ function recalculoDeCombos(carreraResguardo, nombreCarreraRes) {
         "nivel": claveNivel,
         "periodo": clavePeriodo
     }
-    console.log(data);
+    //console.log(data);
 
     let ruta = setUrlBase() + "getCarreras";
 
@@ -335,7 +335,7 @@ function recalculoDeCombos(carreraResguardo, nombreCarreraRes) {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
     }).done(function (data) {
-        console.log(data);
+        //console.log(data);
         $("#selectCarrera").empty();
         $("#selectCarrera").append(`<option selected disabled> - Selecciona una Carrera - </option>`);
 
@@ -343,11 +343,11 @@ function recalculoDeCombos(carreraResguardo, nombreCarreraRes) {
             const element = data[index]; // se establece un elemento por carrera optenida
             if (element.clave == carreraResguardo || element.descrip == nombreCarreraRes) {
                 cont = cont + 1;
-                console.log('la carrera esta en el catalogo nuevo');
+                //console.log('la carrera esta en el catalogo nuevo');
                 option = `<option value="${element.clave}" selected>${element.descrip}</option>`; //se establece la opcion por carrera
 
             } else {
-                console.log('la carrera no esta en el catalogo nuevo');
+                //console.log('la carrera no esta en el catalogo nuevo');
                 option = `<option value="${element.clave}">${element.descrip}</option>`; //se establece la opcion por carrera
             }
             $("#selectCarrera").append(option); // se inserta la carrera de cada elemento
@@ -357,7 +357,7 @@ function recalculoDeCombos(carreraResguardo, nombreCarreraRes) {
         obtenerHorariosBeca();
 
     }).fail(function () {
-        console.log("Algo salió mal");
+        //console.log("Algo salió mal");
     });
 
 }
@@ -378,7 +378,7 @@ function obtenerHorariosBeca() {
         "PlantelId": plantel,
     }
 
-    console.log(data);
+    //console.log(data);
     $.ajax({
         method: "POST",
         headers: {
@@ -388,7 +388,7 @@ function obtenerHorariosBeca() {
         data: data
     }).done(function (data) {
         $('#grupoBotones').empty();
-        console.log(data);
+        //console.log(data);
         if (data.ClaveBeca != undefined) {
             let option = `
             <div class="col-6 col-md-6 col-lg-3 mt-3"> 
@@ -431,7 +431,7 @@ function obtenerHorariosBeca() {
         $('#cargador_horarios').addClass('d-none');
 
     }).fail(function () {
-        console.log("Algo salió mal");
+        //console.log("Algo salió mal");
     });
 }
 
@@ -453,7 +453,7 @@ function getPeriodos() {
         $("#selectPeriodo").empty();
         $("#selectPeriodo").append(`<option value="" selected disabled>¿Cuándo deseas iniciar?</option>`);
 
-        console.log(data);
+        //console.log(data);
         if (data.clave == undefined || data.clave == null) {
             $.each(data, function (index, value) {
                 $('#selectPeriodo').append("<option value='" + value.clave + "'>" + value
@@ -465,7 +465,7 @@ function getPeriodos() {
         }
 
     }).fail(function () {
-        console.log("Algo salió mal");
+        //console.log("Algo salió mal");
     });
 }
 
@@ -509,10 +509,10 @@ function actualizarProspectoCalculadora(turno) {
         url: rutaActualizar,
         data: data
     }).done(function (data) {
-        console.log(data);
+        //console.log(data);
 
     }).fail(function () {
-        console.log("Algo salió mal");
+        //console.log("Algo salió mal");
     });
 }
 
@@ -528,10 +528,10 @@ function establecerVariablesPromo(data) {
         url: ruta,
         data: data
     }).done(function (data) {
-        console.log(data);
+        //console.log(data);
 
     }).fail(function () {
-        console.log("Algo salió mal");
+        //console.log("Algo salió mal");
     });
 
 }
