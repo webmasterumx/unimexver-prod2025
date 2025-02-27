@@ -415,13 +415,11 @@
                     </div>
                     <div class="col-xl-2 col-lg-2 col-md-3 col-sm-12 left-gray-border">
                         <h5 class="hide">
-                            <a href="javascript:void(0);"
-                                onClick="window.open('{{ asset('assets/pdf/reglamentoum.pdf') }}','Reglamento UNIMEX','scrollbars=no,width=580,height=600')">Reglamento
+                            <a  href="{{ route('reglamentoUnimex') }}"> Reglamento
                                 UNIMEX<sup>®</sup></a>
                         </h5>
                         <div class="card" style="min-height: 150px;">
-                            <a href="javascript:void(0);"
-                                onClick="window.open('{{ asset('assets/pdf/reglamentoum.pdf') }}','Reglamento UNIMEX','scrollbars=no,width=580,height=600')">
+                            <a  href="{{ route('reglamentoUnimex') }}"> 
                                 <div class="parent" style="width: 150px;">
                                     <div class="children bg-reglamento">
                                         <span class="linka">Ver Más</span>
@@ -430,8 +428,7 @@
                             </a>
                             <div class="card-body">
                                 <p class="card-text" style="text-align: center;">
-                                    <a href="javascript:void(0);"
-                                        onClick="window.open('{{ asset('assets/pdf/reglamentoum.pdf') }}','Reglamento UNIMEX','scrollbars=no,width=580,height=600')"><span
+                                    <a  href="{{ route('reglamentoUnimex') }}" >
                                             class="blue-text">Reglamento UNIMEX<sup>®</sup></span></a>
 
                                 </p>
