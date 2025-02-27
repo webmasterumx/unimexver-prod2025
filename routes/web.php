@@ -52,6 +52,52 @@ Route::view("/reglamento", "reglamentoUnimex")->name("reglamentoUnimex");
 Route::post('/procesa/datos/folleto', [FormController::class, 'procesarFormularioFolleto'])->name('procesa.datos.folleto');
 Route::post('/procesa/datos/form/contacto', [FormController::class, 'procesaFormularioContacto'])->name('procesa.datos.contacto.inicial');
 
+//rutas de plantel temporales
+Route::get("/izcalli", [UnimexController::class, 'redireccionPlantel']);
+Route::get("/satelite", [UnimexController::class, 'redireccionPlantel']);
+Route::get("/polanco", [UnimexController::class, 'redireccionPlantel']);
+Route::get("/veracruz", [UnimexController::class, 'redireccionPlantel']);
+
+//rutas de licenciaturas temporales 
+Route::get("/licenciatura-en-administracion-de-empresas-turisticas", [UnimexController::class, "getLicenciaturaTemporal"]);
+Route::get("/licenciatura-en-administracion", [UnimexController::class, "getLicenciaturaTemporal"]);
+Route::get("/licenciatura-en-ciencias-de-la-educacion", [UnimexController::class, "getLicenciaturaTemporal"]);
+Route::get("/licenciatura-en-comercio-internacional-y-aduanas", [UnimexController::class, "getLicenciaturaTemporal"]);
+Route::get("/licenciatura-en-contaduria-y-finanzas", [UnimexController::class, "getLicenciaturaTemporal"]);
+Route::get("/licenciatura-en-criminologia", [UnimexController::class, "getLicenciaturaTemporal"]);
+Route::get("/licenciatura-en-derecho", [UnimexController::class, "getLicenciaturaTemporal"]);
+Route::get("/licenciatura-en-diseno-grafico", [UnimexController::class, "getLicenciaturaTemporal"]);
+Route::get("/licenciatura-en-gastronomia-internacional", [UnimexController::class, "getLicenciaturaTemporal"]);
+Route::get("/licenciatura-en-idiomas", [UnimexController::class, "getLicenciaturaTemporal"]);
+Route::get("/licenciatura-en-mercadotecnia-y-publicidad", [UnimexController::class, "getLicenciaturaTemporal"]);
+Route::get("/licenciatura-en-pedagogia", [UnimexController::class, "getLicenciaturaTemporal"]);
+Route::get("/licenciatura-en-psicologia-social", [UnimexController::class, "getLicenciaturaTemporal"]);
+Route::get("/licenciatura-en-relaciones-internacionales-y-comercio-exterior", [UnimexController::class, "getLicenciaturaTemporal"]);
+Route::get("/licenciatura-en-sistemas-computacionales", [UnimexController::class, "getLicenciaturaTemporal"]);
+Route::get("/licenciatura-en-turismo", [UnimexController::class, "getLicenciaturaTemporal"]);
+
+// rutas temporales de licenciatura a distancia
+Route::get("/licenciatura-distancia-en-administracion", [UnimexController::class, "getLicenciaturaDistanciaTemporal"]);
+Route::get("/licenciatura-distancia-en-contaduria-y-finanzas", [UnimexController::class, "getLicenciaturaDistanciaTemporal"]);
+Route::get("/licenciatura-distancia-en-derecho", [UnimexController::class, "getLicenciaturaDistanciaTemporal"]);
+Route::get("/licenciatura-distancia-en-marketing", [UnimexController::class, "getLicenciaturaDistanciaTemporal"]);
+
+// rutas temporales de posgrado
+Route::get("/posgrado-en-administracion", [UnimexController::class, "getPosgradoTemporal"]);
+Route::get("/posgrado-en-comunicacion-visual", [UnimexController::class, "getPosgradoTemporal"]);
+Route::get("/posgrado-en-derecho-penal", [UnimexController::class, "getPosgradoTemporal"]);
+Route::get("/posgrado-en-educacion", [UnimexController::class, "getPosgradoTemporal"]);
+Route::get("/posgrado-en-habilidades-directivas", [UnimexController::class, "getPosgradoTemporal"]);
+Route::get("/posgrado-en-impuestos", [UnimexController::class, "getPosgradoTemporal"]);
+Route::get("/posgrado-en-marketing-digital", [UnimexController::class, "getPosgradoTemporal"]);
+Route::get("/posgrado-en-mercadotecnia", [UnimexController::class, "getPosgradoTemporal"]);
+Route::get("/posgrado-en-terapias-psicosociales", [UnimexController::class, "getPosgradoTemporal"]);
+
+//ruta temporales de posgrado a distancia
+Route::get("/posgrado-distancia-en-educacion", [UnimexController::class, "getPosgradoDistanciaTemporal"]);
+Route::get("/posgrado-distancia-en-habilidades-directivas", [UnimexController::class, "getPosgradoDistanciaTemporal"]);
+Route::get("/posgrado-distancia-en-marketing", [UnimexController::class, "getPosgradoDistanciaTemporal"]);
+
 //* dia Unimex
 Route::view("dia-unimex", 'diaUnimex.index')->name('dia.unimex');
 Route::post("diaUnimex/enviar/datos", [FormController::class, "añadirProspectoDiaUnimex"])->name("add.prospecto.diaUnimex");

@@ -15,6 +15,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\PDF as PDF;
 use Dompdf\Dompdf;
+use Illuminate\Support\Facades\Request as FacadesRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\URL;
 
@@ -60,6 +61,36 @@ class UnimexController extends Controller
         }
     }
 
+    // funcion temporal 
+    public function redireccionPlantel()
+    {
+
+        $urlTotal = FacadesRequest::url();
+
+        $arrayUrl = explode("/", $urlTotal);
+        $tamañoUrl = sizeof($arrayUrl);
+
+        $slug = $arrayUrl[$tamañoUrl - 1];
+
+        $this->utm_recurso = new UtmController();
+        $dataUTM = $this->utm_recurso->iniciarUtmSource();
+
+        $plantel = Plantel::where('nombre', $slug)->first();
+        if ($plantel != null) {
+            $galeria = json_decode($plantel->galeria);
+            $plantelesInNot = Plantel::where('nombre', '!=', $slug)->get();
+
+            return view('plantel', [
+                "plantel" => $plantel,
+                "galeria" => $galeria,
+                "plantelesInNot" => $plantelesInNot,
+                "dataUTM" => $dataUTM
+            ]);
+        } else {
+            return view('errors.404');
+        }
+    }
+
     public function getAcercade($slug): View
     {
         $acercadeFirst = Acercade::where('slug', $slug)->first();
@@ -70,6 +101,71 @@ class UnimexController extends Controller
             return view('acercade', [
                 'acercadeFirst' => $acercadeFirst,
                 "recomendaciones" => $recomendaciones
+            ]);
+        } else {
+            return view('errors.404');
+        }
+    }
+
+    // controller temporal de redireccionamiento en licenciaturas presenciales
+    public function getLicenciaturaTemporal()
+    {
+        $urlTotal = FacadesRequest::url();
+
+        $arrayUrl = explode("/", $urlTotal);
+        $tamañoUrl = sizeof($arrayUrl);
+
+        $nombreCarrera = $arrayUrl[$tamañoUrl - 1];
+
+        $arrayOferta = explode("-", $nombreCarrera);
+        $tamañoArrayOferta = sizeof($arrayOferta);
+
+        if ($nombreCarrera == "licenciatura-en-administracion-de-empresas-turisticas") {
+
+            $slug = $arrayOferta[2] . "_" . $arrayOferta[4] . "_" . $arrayOferta[5];
+        } else {
+            $slug = "";
+            for ($i = 2; $i < $tamañoArrayOferta; $i++) {
+
+                if ($i == ($tamañoArrayOferta - 1)) {
+                    $slug = $slug . $arrayOferta[$i];
+                } else {
+                    $slug = $slug . $arrayOferta[$i] . "_";
+                }
+            }
+        }
+
+        //dd($slug);
+
+        $licenciatura = OfertaAcademica::where('slug', $slug)->where('id_tipo', 1)->first();
+
+        $this->utm_recurso = new UtmController();
+        $extras = new ExtrasUnimexController();
+        $origen = $this->utm_recurso->comprovacionOrigen();
+        $dataUTM = $this->utm_recurso->iniciarUtmSource();
+        $urlVisitada = URL::full();
+        $arrayContraportadas = $extras->getArrayVentajasImg();
+
+        //dd($arrayContraportadas[random_int(0, 6)]);
+
+        if ($licenciatura != null) {
+
+            $extras = json_decode($licenciatura->extras, true);
+            $temario  = $extras['extras']['temario'];
+            $campo_laboral = $extras['extras']['campo_laboral'];
+            $disponibilidad = $extras['extras']['disponibilidad'];
+            $abreviatura = $licenciatura->abreviatura;
+
+            return view('licenciatura', [
+                "licenciatura" => $licenciatura,
+                "temario" => $temario,
+                "campo_laboral" => $campo_laboral,
+                "disponibilidad" => $disponibilidad,
+                "origen" => $origen,
+                "dataUTM" => $dataUTM,
+                "abreviatura" => $abreviatura,
+                "urlVisitada" => $urlVisitada,
+                "contraportada" => $arrayContraportadas[random_int(0, 6)],
             ]);
         } else {
             return view('errors.404');
@@ -139,6 +235,64 @@ class UnimexController extends Controller
         } else {
             return view('errors.404');
         }
+    }
+
+    function getLicenciaturaDistanciaTemporal()
+    {
+        $urlTotal = FacadesRequest::url();
+
+        $arrayUrl = explode("/", $urlTotal);
+        $tamañoUrl = sizeof($arrayUrl);
+
+        $nombreCarrera = $arrayUrl[$tamañoUrl - 1];
+
+        $arrayOferta = explode("-", $nombreCarrera);
+        $tamañoArrayOferta = sizeof($arrayOferta);
+
+        if ($nombreCarrera == "licenciatura-distancia-en-administracion") {
+
+            $slug = "administracion_de_empresas";
+        } else {
+            $slug = "";
+            for ($i = 3; $i < $tamañoArrayOferta; $i++) {
+
+                if ($i == ($tamañoArrayOferta - 1)) {
+                    $slug = $slug . $arrayOferta[$i];
+                } else {
+                    $slug = $slug . $arrayOferta[$i] . "_";
+                }
+            }
+        }
+
+        //dd($slug);
+
+        $this->utm_recurso = new UtmController();
+        $origen = $this->utm_recurso->comprovacionOrigen();
+        $dataUTM = $this->utm_recurso->iniciarUtmSource();
+        $urlVisitada = URL::full();
+
+        $licenciatura_distancia = OfertaAcademica::where('slug', $slug)->where("id_tipo", 2)->first();
+
+        //dd($licenciatura_distancia);
+
+        $temario = json_decode($licenciatura_distancia->extras, true);
+        $campo_laboral = $temario["campoLaboral"];
+        $rvoe = $temario["RVOE"];
+        $abreviatura = $licenciatura_distancia->abreviatura;
+
+        //dd($abreviatura);
+        //dd($temario);
+
+        return view('licenciaturadistancia', [
+            "licenciatura_distancia" => $licenciatura_distancia,
+            "temario" => $temario["temario"],
+            "campo_laboral" => $campo_laboral,
+            "rvoe" => $rvoe,
+            "dataUTM" => $dataUTM,
+            "origen" => $origen,
+            "abreviatura" => $abreviatura,
+            "urlVisitada" => $urlVisitada
+        ]);
     }
 
     public function getLicenciaturaDistancia($slug): View
@@ -212,8 +366,138 @@ class UnimexController extends Controller
         }
     }
 
+    //funcion temporal de posgrados
+    function getPosgradoTemporal()
+    {
+        $urlTotal = FacadesRequest::url();
+
+        $arrayUrl = explode("/", $urlTotal);
+        $tamañoUrl = sizeof($arrayUrl);
+
+        $nombreCarrera = $arrayUrl[$tamañoUrl - 1];
+
+        $arrayOferta = explode("-", $nombreCarrera);
+        $tamañoArrayOferta = sizeof($arrayOferta);
+
+        if ($nombreCarrera == "licenciatura-distancia-en-administracion") {
+
+            $slug = "administracion_de_empresas";
+        } else {
+            $slug = "";
+            for ($i = 2; $i < $tamañoArrayOferta; $i++) {
+
+                if ($i == ($tamañoArrayOferta - 1)) {
+                    $slug = $slug . $arrayOferta[$i];
+                } else {
+                    $slug = $slug . $arrayOferta[$i] . "_";
+                }
+            }
+        }
+
+        //dd($slug);
+
+        $this->utm_recurso = new UtmController();
+        $extras = new ExtrasUnimexController();
+        $origen = $this->utm_recurso->comprovacionOrigen();
+        $dataUTM = $this->utm_recurso->iniciarUtmSource();
+        $urlVisitada = URL::full();
+        $arrayContraportadas = $extras->getArrayVentajasPosgradosImg();
+        //dd($arrayContraportadas[random_int(0, 4)]);
+
+        $posgrado = OfertaAcademica::where('slug', $slug)->where("id_tipo", 3)->first();
+        //dd($posgrado);
+
+        if ($posgrado != null) {
+            $extras = json_decode($posgrado->extras, true);
+            $temario_especialidad = $extras['extras']['temario_especialidad'];
+            $temario_maestria = $extras['extras']['temario_maestria'];
+            $rvoe_especialidad = $extras['extras']['rvoe_especialidad'];
+            $rvoe_maestria = $extras['extras']['rvoe_maestria'];
+            $abreviatura = $posgrado->abreviatura;
+
+            return view('posgrado', [
+                "posgrado" => $posgrado,
+                "temario_especialidad" => $temario_especialidad,
+                "temario_maestria" => $temario_maestria,
+                "rvoe_especialidad" => $rvoe_especialidad,
+                "rvoe_maestria" => $rvoe_maestria,
+                "dataUTM" => $dataUTM,
+                "origen" => $origen,
+                "abreviatura" => $abreviatura,
+                "urlVisitada" => $urlVisitada,
+                "contraportada" => $arrayContraportadas[random_int(0, 4)],
+            ]);
+        } else {
+            return view('errors.404');
+        }
+    }
+
     public function getPosgradoDistancia($slug): View
     {
+
+        $this->utm_recurso = new UtmController();
+        $extras = new ExtrasUnimexController();
+        $origen = $this->utm_recurso->comprovacionOrigen();
+        $dataUTM = $this->utm_recurso->iniciarUtmSource();
+        $urlVisitada = URL::full();
+        $arrayContraportadas = $extras->getArrayVentajasPosDisImg();
+
+        $posgrado = OfertaAcademica::where('slug', $slug)->where("id_tipo", 4)->first();
+
+        if ($posgrado != null) {
+            $extras = json_decode($posgrado->extras, true);
+            $temario_especialidad = $extras['extras']['temario_especialidad'];
+            $temario_maestria = $extras['extras']['temario_maestria'];
+            $rvoe_especialidad = $extras['extras']['rvoe_especialidad'];
+            $rvoe_maestria = $extras['extras']['rvoe_maestria'];
+            $abreviatura = $posgrado->abreviatura;
+
+            return view('posgradosdistancia', [
+                "posgrado" => $posgrado,
+                "temario_especialidad" => $temario_especialidad,
+                "temario_maestria" => $temario_maestria,
+                "rvoe_especialidad" => $rvoe_especialidad,
+                "rvoe_maestria" => $rvoe_maestria,
+                "dataUTM" => $dataUTM,
+                "origen" => $origen,
+                "abreviatura" => $abreviatura,
+                "urlVisitada" => $urlVisitada,
+                "contraportada" => $arrayContraportadas[random_int(0, 2)],
+            ]);
+        } else {
+            return view('errors.404');
+        }
+    }
+
+    //funcion de osgrado a distanci temporal
+    function getPosgradoDistanciaTemporal()
+    {
+        $urlTotal = FacadesRequest::url();
+
+        $arrayUrl = explode("/", $urlTotal);
+        $tamañoUrl = sizeof($arrayUrl);
+
+        $nombreCarrera = $arrayUrl[$tamañoUrl - 1];
+
+        $arrayOferta = explode("-", $nombreCarrera);
+        $tamañoArrayOferta = sizeof($arrayOferta);
+
+        if ($nombreCarrera == "posgrado-distancia-en-marketing") {
+
+            $slug = "marketing_digital";
+        } else {
+            $slug = "";
+            for ($i = 3; $i < $tamañoArrayOferta; $i++) {
+
+                if ($i == ($tamañoArrayOferta - 1)) {
+                    $slug = $slug . $arrayOferta[$i];
+                } else {
+                    $slug = $slug . $arrayOferta[$i] . "_";
+                }
+            }
+        }
+
+        //dd($slug);
 
         $this->utm_recurso = new UtmController();
         $extras = new ExtrasUnimexController();
@@ -264,7 +548,7 @@ class UnimexController extends Controller
         $apiConsumoUnimex = new ApiConsumoUnimex();
         $listaRvoes = $apiConsumoUnimex->getRvoes();
 
-        return view('rvoes',["lista" => $listaRvoes]);
+        return view('rvoes', ["lista" => $listaRvoes]);
     }
 
     public function investigacion(): View
