@@ -442,11 +442,48 @@ class FormController extends Controller
         $nivel  = $request->nivelPosicion;
         $indentificadorEs = $request->identificadorEsp;
 
+        $origen = $request->origen;
+        $abreviatura = $request->abreviatura;
+        $abreviaturaFormateada = str_replace("+", " ", $abreviatura);
+        $utmMedium = $request->utm_medium;
+        $urlEnvioForm = $request->urlVisitada;
+
+        $this->utm_recurso = new UtmController();
+
+        //! se conservan las variables de session
+
+        if ($utmMedium == "organico" || $utmMedium  == "ORGANICO" || $utmMedium == "Organico" || $utmMedium == null) { // la utm en session no es organica
+
+            if ($origen == "slider") { //! si osi vienen desde una oferta academica
+                $source = "Website Veracruz";
+                $campaign = "Home body";
+                $content = "Slider" . $abreviaturaFormateada . " Oacademica Folleto";
+            } else if ($origen == "menu") { //! si osi vienen desde una oferta academica
+                $source = "Website Veracruz";
+                $campaign = "Home header";
+                $content = "Oacademica " . $abreviaturaFormateada . " body Folleto";
+            } else {
+                $source = "Website Veracruz";
+                $campaign = "Oacademica body";
+                $content = "Folleto " . $abreviaturaFormateada . " Informes";
+            }
+
+            $medium = "Organico";
+            $term = "Folleto";
+        } else {
+            $source = session("utm_source");
+            $medium = session("utm_medium");
+            $content = session("utm_content");
+            $campaign = session("utm_campaign");
+            $term = session("utm_term");
+        }
+
         /*  var_dump([
-             $plantel,
-             $nivel,
-             $licenciatura,
-             $indentificadorEs,
+             $source,
+             $medium,
+             $content,
+             $campaign,
+             $term
          ]); */
 
         $datos = app(FolletoController::class)->leerExcelFolletos($plantel, $nivel, $licenciatura, $indentificadorEs);
@@ -455,10 +492,10 @@ class FormController extends Controller
         $carrera = $datos["id_carrera"];
 
         $valores = array(
-            "campaingContent" => "",
-            "campaignMedium" => "",
-            "campaignTerm" => "",
-            "descripPublicidad" => "",
+            "campaignContent" => $content,
+            "campaignMedium" => $medium,
+            "campaignTerm" => $term,
+            "descripPublicidad" => $campaign,
             "folioReferido" => "0",
             "pApMaterno" => "",
             "pApPaterno" => "",
@@ -472,15 +509,15 @@ class FormController extends Controller
             "pPeriodoEscolar" => $request->peridoSelectFolleto,
             "pPlantel" => $request->plantelSelectFolleto,
             "pTelefono" => "",
-            "utpsource" => "",
-            "websiteURL" => "",
+            "utpsource" => $source,
+            "websiteURL" => $urlEnvioForm,
         );
 
         $agregarProspecto = app(ApiConsumoController::class)->agregarProspectoCRM($valores);
 
         //var_dump($agregarProspecto);
 
-        return $ruta;
+        return $ruta; 
     }
 
     public function getIdentificarCarrera($licenciatura, $plantel, $periodo, $nivel)
